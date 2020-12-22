@@ -1,0 +1,8 @@
+ignore:
+  - "setup.py"
+  - "test_binoculars.py"
+
+coverage:
+  status:
+    project: off
+    patch: off
