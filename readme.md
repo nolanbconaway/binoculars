@@ -2,10 +2,11 @@
 
 ![Unit Tests](https://github.com/nolanbconaway/binoculars/workflows/Unit%20Tests/badge.svg)
 [![codecov](https://codecov.io/gh/nolanbconaway/binoculars/branch/main/graph/badge.svg?token=EOH4M3PIYL)](https://codecov.io/gh/nolanbconaway/binoculars)
+[![PyPI version](https://badge.fury.io/py/binoculars.svg)](https://badge.fury.io/py/binoculars)
 
 This is a small package that provides functions to compute the confidence interval for a binomial proportion. I made it because I spend altogether too much time staring at the Binomial proportion confidence interval [wiki page](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval).
 
-Presently, the packages implements:
+Presently, the package implements:
 
 - [The Normal Approximation](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Normal_approximation_interval)
 - [The Wilson Interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval) (no continuity correction)
@@ -32,6 +33,10 @@ binomial_confidence(p, N)  # default to jeffrey's interval
 binomial_confidence(p, N, tail='lower') # grab one tail
 # 0.1307892803998113
 
+# set Z value
+binomial_confidence(p, N, tail='lower', z=2.58)
+# 0.11212431621448567
+
 # choose your method
 
 binomial_confidence(p, N, method='normal')
@@ -49,3 +54,9 @@ I honestly do not imagine touching this a lot. But maybe you want to add one of 
 3. `pip install -e .[test]`
 4. `black lib --check`
 5. `pytest`
+
+## Later (?)
+
+ - [] Add confidence intervals for odds ratios, differences
+ - [] Add the unimplemented intervals
+ - [] Add plots comparing the intervals to readme.
