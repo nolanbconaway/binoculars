@@ -2,7 +2,8 @@
 
 ![Unit Tests](https://github.com/nolanbconaway/binoculars/workflows/Unit%20Tests/badge.svg)
 [![codecov](https://codecov.io/gh/nolanbconaway/binoculars/branch/main/graph/badge.svg?token=EOH4M3PIYL)](https://codecov.io/gh/nolanbconaway/binoculars)
-[![PyPI version](https://badge.fury.io/py/binoculars.svg)](https://badge.fury.io/py/binoculars)
+[![PyPI](https://img.shields.io/pypi/v/binoculars)](https://pypi.org/project/binoculars/)
+
 
 This is a small package that provides functions to compute the confidence interval for a binomial proportion. I made it because I spend altogether too much time staring at the Binomial proportion confidence interval [wiki page](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval).
 
