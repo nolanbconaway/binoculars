@@ -64,9 +64,6 @@ def binomial_confidence(
     Returns
         A tuple of (lower, upper) confidence interval values, or a single value.
     """
-    if tail is not None and tail not in ("lower", "upper"):
-        raise ValueError("Invalid tail! Choose from: lower, upper")
-
     try:
         func = {
             "jeffrey": binomial_jeffreys_interval,

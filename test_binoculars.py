@@ -13,6 +13,9 @@ def test_lower_less_upper(method, n, p):
     assert l < p
     assert u > p
 
+    assert l == binoculars.binomial_confidence(p, n, method=method, tail="lower")
+    assert u == binoculars.binomial_confidence(p, n, method=method, tail="upper")
+
 
 @pytest.mark.parametrize("method", ["jeffrey", "wilson", "normal"])
 @pytest.mark.parametrize("lower_n, greater_n", [(2, 3), (10, 20), (100, 200)])
@@ -24,9 +27,12 @@ def test_more_certain_with_n(method, lower_n, greater_n):
     assert lower_u > greater_u
 
 
-def test_invalid_arg_errors():
+@pytest.mark.parametrize("method", ["jeffrey", "wilson", "normal"])
+def test_invalid_tail_error(method):
     with pytest.raises(ValueError):
-        binoculars.binomial_confidence(0.1, 10, tail="NOPE")
+        binoculars.binomial_confidence(0.1, 10, tail="NOPE", method=method)
 
+
+def test_invalid_method_error():
     with pytest.raises(ValueError):
         binoculars.binomial_confidence(0.1, 10, method="NOPE")
