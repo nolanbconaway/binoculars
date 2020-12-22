@@ -5,7 +5,7 @@
 
 This is a small package that provides functions to compute the confidence interval for a binomial proportion. I made it because I spend altogether too much time staring at the Binomial proportion confidence interval [wiki page](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval).
 
-Presently, the packages implements:
+Presently, the package implements:
 
 - [The Normal Approximation](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Normal_approximation_interval)
 - [The Wilson Interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval) (no continuity correction)
@@ -53,3 +53,9 @@ I honestly do not imagine touching this a lot. But maybe you want to add one of 
 3. `pip install -e .[test]`
 4. `black lib --check`
 5. `pytest`
+
+## Later (?)
+
+ - [] Add confidence intervals for odds ratios, differences
+ - [] Add the unimplemented intervals
+ - [] Add plots comparing the intervals to readme.
