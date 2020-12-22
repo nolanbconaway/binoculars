@@ -32,6 +32,10 @@ binomial_confidence(p, N)  # default to jeffrey's interval
 binomial_confidence(p, N, tail='lower') # grab one tail
 # 0.1307892803998113
 
+# set Z value
+binomial_confidence(p, N, tail='lower', z=2.58)
+# 0.11212431621448567
+
 # choose your method
 
 binomial_confidence(p, N, method='normal')
