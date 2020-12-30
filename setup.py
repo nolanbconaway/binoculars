@@ -29,8 +29,8 @@ setup(
     ],
     keywords=["statistics", "binomial", "confidence"],
     license="MIT",
-    package_dir={"": "lib"},
     packages=find_packages("lib"),
+    package_dir={"": "lib"},
     install_requires=INSTALL_REQUIRES,
     extras_require=dict(
         test=["black==20.8b1", "pytest==6.2.1", "pytest-cov==2.10.1", "codecov==2.1.11"]
