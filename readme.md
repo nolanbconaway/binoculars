@@ -1,5 +1,7 @@
 # Binoculars: Binomial Confidence Intervals
 
+![https://deepnote.com/project/e17fa473-51c6-45aa-8de0-980be7d2dc5f](demo.png)
+
 ![Unit Tests](https://github.com/nolanbconaway/binoculars/workflows/Unit%20Tests/badge.svg)
 [![codecov](https://codecov.io/gh/nolanbconaway/binoculars/branch/main/graph/badge.svg?token=EOH4M3PIYL)](https://codecov.io/gh/nolanbconaway/binoculars)
 [![PyPI](https://img.shields.io/pypi/v/binoculars)](https://pypi.org/project/binoculars/)
@@ -13,7 +15,9 @@ Presently, the package implements:
 - [The Wilson Interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval) (no continuity correction)
 - [Jeffrey's interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Jeffreys_interval) (via scipy.stats.beta)
 
-If you haven't spent a lot of time thinking about which interval _you_ should use (and why would you want to?), I suggest using the Wilson interval or Jeffrey's interval. Jeffrey's interval is returned by default by the `binomial_confidence` function in this package.
+If you haven't spent a lot of time thinking about which interval _you_ should use (and why would you want to?), I suggest using the Wilson interval or Jeffrey's interval. Jeffrey's interval is returned by default by the `binomial_confidence` function in this package. 
+
+> You _oughtn't_ use the normal approximation if you don't have to. It produces patently inaccurate values with low/high probabilities at low Ns. The plot at the top of this readme shows the normal approximation producing lower lower bounds of _less than 0_ in these cases.
 
 ## Install
 
@@ -58,6 +62,6 @@ I honestly do not imagine touching this a lot. But maybe you want to add one of 
 
 ## Later (?)
 
- - [] Add confidence intervals for odds ratios, differences
- - [] Add the unimplemented intervals
- - [] Add plots comparing the intervals to readme.
+ - [ ] Add confidence intervals for odds ratios, differences
+ - [ ] Add the unimplemented intervals
+ - [x] Add plots comparing the intervals to readme.
