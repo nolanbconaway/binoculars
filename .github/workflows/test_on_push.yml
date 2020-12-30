@@ -20,7 +20,7 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install --upgrade pip
-          pip install -e .[test]
+          pip install .[test]
 
       - name: Lint with Black
         run: black . --check --verbose
