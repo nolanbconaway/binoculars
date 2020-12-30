@@ -15,7 +15,7 @@ LONG_DESCRIPTION = (THIS_DIRECTORY / "readme.md").read_text()
 
 setup(
     name="binoculars",
-    version="0.1.1",
+    version="0.1.2",
     description="Various calculations for binomial confidence intervals.",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
