@@ -50,6 +50,9 @@ binomial_confidence(p, N, method='normal')
 
 binomial_confidence(p, N, method='wilson')
 # (0.1333659225590988, 0.28883096192650237)
+
+binomial_confidence(p, N, method='clopper-pearson')
+# (0.1266544343411484, 0.291844378634278
 ```
 
 ## Development
