@@ -3,8 +3,10 @@ import pytest
 
 import binoculars
 
+METHODS = ["jeffrey", "wilson", "normal", "clopper-pearson"]
 
-@pytest.mark.parametrize("method", ["jeffrey", "wilson", "normal"])
+
+@pytest.mark.parametrize("method", METHODS)
 @pytest.mark.parametrize("n", [5, 1e2, 1e3, 1e5, 1e8])
 @pytest.mark.parametrize("p", [0.01, 0.5, 0.99])
 def test_lower_less_upper(method, n, p):
@@ -21,7 +23,7 @@ def test_lower_less_upper(method, n, p):
     assert u == binoculars.binomial_confidence(p, n, method=method, tail="upper")
 
 
-@pytest.mark.parametrize("method", ["jeffrey", "wilson", "normal"])
+@pytest.mark.parametrize("method", METHODS)
 @pytest.mark.parametrize("lower_n, greater_n", [(2, 3), (10, 20), (100, 200)])
 def test_more_certain_with_n(method, lower_n, greater_n):
     """Test that certainty diminishes with greater N."""
@@ -32,7 +34,7 @@ def test_more_certain_with_n(method, lower_n, greater_n):
     assert lower_u > greater_u
 
 
-@pytest.mark.parametrize("method", ["jeffrey", "wilson", "normal"])
+@pytest.mark.parametrize("method", METHODS)
 @pytest.mark.parametrize("lower_z, greater_z", [(1, 1.01), (1.96, 2.58)])
 def test_z_certainty(method, lower_z, greater_z):
     """Test that the interval tightens with lower Z"""
@@ -45,7 +47,7 @@ def test_z_certainty(method, lower_z, greater_z):
     assert lower_u < greater_u
 
 
-@pytest.mark.parametrize("method", ["jeffrey", "wilson", "normal"])
+@pytest.mark.parametrize("method", METHODS)
 def test_invalid_tail_error(method):
     with pytest.raises(ValueError):
         binoculars.binomial_confidence(0.1, 10, tail="NOPE", method=method)
