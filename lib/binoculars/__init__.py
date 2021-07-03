@@ -11,9 +11,9 @@ def binomial_jeffreys_interval(p: float, n: int, tail: str, z: float = 1.96):
     a = n * p + 0.5
     b = n - n * p + 0.5
     if tail == "lower":
-        return stats.beta.ppf(alpha, a, b)
+        return stats.beta.ppf(alpha / 2, a, b)
     elif tail == "upper":
-        return stats.beta.ppf(1 - alpha, a, b)
+        return stats.beta.ppf(1 - alpha / 2, a, b)
     else:
         raise ValueError("Invalid tail! Choose from: lower, upper")
 
