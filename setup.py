@@ -15,7 +15,7 @@ LONG_DESCRIPTION = (THIS_DIRECTORY / "readme.md").read_text()
 
 setup(
     name="binoculars",
-    version="0.1.2",
+    version="0.1.3",
     description="Various calculations for binomial confidence intervals.",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
@@ -35,5 +35,4 @@ setup(
     extras_require=dict(
         test=["black==20.8b1", "pytest==6.2.1", "pytest-cov==2.10.1", "codecov==2.1.11"]
     ),
-    package_data={"shabadoo": ["version"]},
 )
