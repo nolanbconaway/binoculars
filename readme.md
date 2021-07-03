@@ -14,6 +14,7 @@ Presently, the package implements:
 - [The Normal Approximation](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Normal_approximation_interval)
 - [The Wilson Interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval) (no continuity correction)
 - [Jeffrey's interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Jeffreys_interval) (via scipy.stats.beta)
+- [Clopper-Pearson interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Clopper%E2%80%93Pearson_interval) (also via scipy.stats.beta)
 
 If you haven't spent a lot of time thinking about which interval _you_ should use (and why would you want to?), I suggest using the Wilson interval or Jeffrey's interval. Jeffrey's interval is returned by default by the `binomial_confidence` function in this package. 
 
