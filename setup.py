@@ -35,5 +35,4 @@ setup(
     extras_require=dict(
         test=["black==20.8b1", "pytest==6.2.1", "pytest-cov==2.10.1", "codecov==2.1.11"]
     ),
-    package_data={"shabadoo": ["version"]},
 )
